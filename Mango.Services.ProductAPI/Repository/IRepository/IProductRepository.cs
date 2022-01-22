@@ -1,6 +1,6 @@
 using Mango.Services.ProductAPI.Models.Dto;
 
-namespace Mango.Services.ProductAPI.Repository;
+namespace Mango.Services.ProductAPI.Repository.IRepository;
 
 public interface IProductRepository
 {
