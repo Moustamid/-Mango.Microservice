@@ -1,3 +1,5 @@
+using AutoMapper;
+using Mango.Services.ProductAPI;
 using Mango.Services.ProductAPI.DbContext;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 //. DbContext
 var DefaultConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(DefaultConnection));
+
+//.Mapper
+var mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 //. MVC
 builder.Services.AddControllers();
