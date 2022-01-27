@@ -1,4 +1,3 @@
-using System.Collections;
 using AutoMapper;
 using Mango.Services.ProductAPI.DbContext;
 using Mango.Services.ProductAPI.Models;
@@ -72,5 +71,5 @@ public class ProductRepository : IProductRepository
         {
             return false;
         }
-    }
+    } 
 }

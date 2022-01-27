@@ -12,18 +12,18 @@ var builder = WebApplication.CreateBuilder(args);
 var DefaultConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(DefaultConnection));
 
-//.Mapper
+//. Mapper
 var mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-//.Repositories :
+//. Dependency Injection :
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
     
 //. MVC
 builder.Services.AddControllers();
 
-//.Swagger
+//. Swagger
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
