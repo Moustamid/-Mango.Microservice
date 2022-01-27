@@ -15,9 +15,9 @@ public class ProductApiController : ControllerBase
         _response = new ResponseDto();
         _productRepo = productRepo;
     }
-    
-    
-    //.GET
+
+
+    //-GET
     [HttpGet]
     public async Task<object> Get()
     {
@@ -34,8 +34,8 @@ public class ProductApiController : ControllerBase
 
         return _response;
     }
-    
-    //.GET By Id
+
+    //-GET By Id
     [HttpGet]
     [Route("{id:int}")]
     public async Task<object> Get(int id)
@@ -53,8 +53,8 @@ public class ProductApiController : ControllerBase
 
         return _response;
     }
-    
-    //.Post
+
+    //-Post
     [HttpPost]
     public async Task<object> Post([FromBody] ProductDto productDto)
     {
@@ -72,8 +72,8 @@ public class ProductApiController : ControllerBase
         return _response;
     }
     
-      
-    //.Put
+
+    //-Put
     [HttpPut]
     public async Task<object> Put([FromBody] ProductDto productDto)
     {

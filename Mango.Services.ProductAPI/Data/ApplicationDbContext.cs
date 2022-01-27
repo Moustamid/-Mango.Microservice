@@ -11,6 +11,8 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Product> Products { get; set; }
     
+    
+    //. Seeding the Database 
      protected override void OnModelCreating(ModelBuilder modelBuilder)
      {
             base.OnModelCreating(modelBuilder);
